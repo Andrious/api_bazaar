@@ -1,0 +1,107 @@
+name: api_bazaar
+description: A collection of assorted API's
+
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+#publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+
+dependencies:
+  # https://pub.dev/packages/carousel_slider
+  carousel_slider: ^4.0.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.0
+
+  # https://pub.dev/packages/dbutils
+  dbutils: ^5.0.0
+#    path: ../../packages/dbutils
+
+  flutter:
+    sdk: flutter
+
+  # https://pub.dev/packages/flutter_material_color_picker/
+  flutter_material_color_picker: ^1.0.0
+
+  # https://pub.dev/packages/mvc_application
+  mvc_application: ^8.0.0
+#    path: ../../packages/mvc_application
+
+  # https://pub.dev/packages/state_set
+  state_set: ^3.0.0
+#    path: ../../packages/state_set
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+## Not used in this project.
+#  flutter_lints: ^1.0.0
+
+  flutter_launcher_icons: ^0.9.0
+
+  # To create an MSIX distribution for the Microsoft Store
+  msix: ^3.0.0
+
+## Windows app
+msix_config:
+  display_name: Bazaar Flutter Demo Only
+  publisher_display_name: Andrious Solutions Ltd.
+  identity_name: AndriousSolutionsLtd.BazaarFlutterDemoOnly
+  #  capabilities: 'internetClient,location,microphone,webcam'
+  #  certificate_path: C:/<PathToCertificate>/<MyCertificate.pfx>
+  #  certificate_password: 1234 (require if using .pfx certificate)
+  #  certificate_subject: CN=MyName
+  logo_path: C:\Programs\Tools\Projects\Flutter\apps\api_bazaar\windows_logo.png
+  start_menu_icon_path: C:\Programs\Tools\Projects\Flutter\apps\api_bazaar\windows_logo.png
+  tile_icon_path: C:\Programs\Tools\Projects\Flutter\apps\api_bazaar\windows_logo.png
+  icons_background_color: transparent
+  languages: en
+  architecture: x64
+  publisher: CN=D21AD24D-2385-4919-912B-45D7C00CDFDE
+  store: true
+  install_certificate: false
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "images/icon/icon1.jpg"
+
+
+# The following section is specific to Flutter.
+flutter:
+
+  # you can use the icons in the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - images/
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware.
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/montserrat/Montserrat-Medium.ttf
+        # - asset: fonts/Montserrat-Regular.ttf
+        # style: italic
+    - family: Roboto
+      fonts:
+        - asset: fonts/roboto/Roboto-Medium.ttf
+          # - asset: fonts/TrajanPro_Bold.ttf
+          weight: 700

@@ -1,0 +1,8 @@
+keytool -genkey -v -keystore C:\Users\gtfpe\KeyStore\bazaar.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias bazaar
+
+//
+https://partner.microsoft.com/en-us/dashboard/apps-and-games/overview
+// Go to Navigation bar and select 'Product Identity'
+https://partner.microsoft.com/en-us/dashboard/products/9MV5XWCV7T8R/identity
+
+flutter pub run msix:create
