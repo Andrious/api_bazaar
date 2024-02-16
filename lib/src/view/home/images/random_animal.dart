@@ -30,4 +30,16 @@ class RandomAnimal extends ImageAPIStatefulWidget {
   State<StatefulWidget> createState() => _RandomState();
 }
 
-class _RandomState extends ImageAPIStateMVC<RandomAnimal> {}
+class _RandomState extends ImageAPIStateMVC<RandomAnimal> {
+  /// Called if its InheritedWidget is called again
+  /// and this State object is to rebuild.
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return super.build(context);
+  }
+}

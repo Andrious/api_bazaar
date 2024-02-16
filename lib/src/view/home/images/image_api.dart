@@ -120,7 +120,8 @@ class ImageAPIStateMVC<T extends ImageAPIStatefulWidget> extends StateMVC<T>
   /// Called after the FutureBuilder
   @override
   Widget buildWidget(BuildContext context) {
-    _con.widgetInherited(context);
+//    _con.widgetInherited(context);
+    APIImages.dependOnInheritedWidget(context);
     return GestureDetector(
       // onTap: con?.newAnimals,
       // onDoubleTap: con?.newAnimals,

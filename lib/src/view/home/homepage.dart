@@ -51,9 +51,7 @@ class HomePageState extends StateMVC<HomePage> {
       count: 1,
       builder: (imageWidget) => InkWell(
         onTap: () {
-          ran.reload(
-              api: (imageWidget as RandomAnimal)
-                  .api); //ran.whichAnimal(imageWidget));
+          ran.reload(api: (imageWidget as RandomAnimal).api);
           // Rebuild dependencies
           APIImages.notifyClients();
         },
@@ -105,19 +103,17 @@ class HomePageState extends StateMVC<HomePage> {
             padding: const EdgeInsets.all(10),
             child: APIImages.setState(
               builder: (context) {
-                APIImages.dependOnInheritedWidget(context);
                 widgetInherited(context);
-                final Label? label = ran.currentAPI?.label;
-                label?.onText(
-                  style: const TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 16),
-                );
-                // return Text(
-                //   L10n.s('${ran.currentAPI.label.toUpperCase()} Pictures'),
-                //   style: const TextStyle(
-                //       fontWeight: FontWeight.bold, fontSize: 16),
-                // );
-                return label?.text ?? const SizedBox();
+                Text? label;
+                final String? value = ran.currentAPI?.label.value;
+                if (value != null) {
+                  label = Text(
+                    L10n.s('${value.trim().toUpperCase()} Pictures'),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16),
+                  );
+                }
+                return label ?? const SizedBox();
               },
             ),
           ),

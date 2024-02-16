@@ -175,13 +175,6 @@ class RandomAnimals extends ControllerMVC {
           continue;
         }
 
-        final label = animal.label.onText(
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        );
-
         for (final thisAnimal in animalList) {
           //
           final image = GridTile(
@@ -191,7 +184,16 @@ class RandomAnimals extends ControllerMVC {
               child: Center(
                 child: Builder(builder: (context) {
                   widgetInherited(context);
-                  return label;
+                  Text? label;
+                  final String? value = animal.label.value;
+                  if (value != null) {
+                    label = Text(
+                      L10n.s(value.toLowerCase()),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    );
+                  }
+                  return label ?? const SizedBox();
                 }),
               ),
             ),
